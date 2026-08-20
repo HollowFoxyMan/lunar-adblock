@@ -1,0 +1,32 @@
+[package]
+name = "lunar-adblock"
+version = "0.1.0"
+edition = "2021"
+description = "Removes advertising from the Lunar Client launcher and game by blocking the Overwolf and Google ad stack at the hosts level"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+
+[dependencies.windows-sys]
+version = "0.59"
+features = [
+    "Win32_Foundation",
+    "Win32_NetworkManagement_Dns",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_System_Console",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Registry",
+    "Win32_System_Threading",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+]
+
+[dependencies.sha2]
+version = "0.10"
+
+[dependencies.serde_json]
+version = "1"
